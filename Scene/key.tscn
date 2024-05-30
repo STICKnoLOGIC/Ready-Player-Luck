@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmys8qlyfwxjf"]
+
+[ext_resource type="Script" path="res://Script/key.gd" id="1_eh512"]
+[ext_resource type="Texture2D" uid="uid://020a3q51gd6i" path="res://Asset/Sprites/Blank KB/Blank_Black_Super_Wide.png" id="2_jdiod"]
+[ext_resource type="PackedScene" uid="uid://ykgccpij073v" path="res://Scene/DefaultText.tscn" id="2_jxtjs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c6u2"]
+size = Vector2(80, 54)
+
+[node name="Key" type="Node2D"]
+script = ExtResource("1_eh512")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2.71329, 2.20854)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3c6u2")
+
+[node name="key" type="Sprite2D" parent="."]
+scale = Vector2(2.44, 2.44)
+texture = ExtResource("2_jdiod")
+
+[node name="label" parent="." instance=ExtResource("2_jxtjs")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -83.0
+offset_top = -9.0
+offset_right = 169.0
+offset_bottom = 31.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 21
+text = "Click Me!"
+justification_flags = 2
+
+[node name="rgbTime" type="Timer" parent="."]
+autostart = true
+
+[connection signal="input_event" from="Area2D" to="." method="_on_input_event"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="rgbTime" to="." method="_rg_next_color"]

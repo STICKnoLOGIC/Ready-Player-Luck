@@ -1,0 +1,185 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfuuv3jofjr1s"]
+
+[ext_resource type="Script" path="res://Script/main.gd" id="1_7c53l"]
+[ext_resource type="PackedScene" uid="uid://ykgccpij073v" path="res://Scene/DefaultText.tscn" id="1_ixh0n"]
+[ext_resource type="PackedScene" uid="uid://bmys8qlyfwxjf" path="res://Scene/key.tscn" id="2_rpwsk"]
+[ext_resource type="Texture2D" uid="uid://cxx3r8e1af4pw" path="res://Asset/Sprites/Annoying Char/annoyed.png" id="3_avy25"]
+[ext_resource type="Texture2D" uid="uid://rfigwia6r7dx" path="res://Asset/Sprites/Blank KB/Blank_Black_Enter.png" id="4_khkh6"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_7c53l")
+
+[node name="camera" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" parent="CanvasLayer" instance=ExtResource("1_ixh0n")]
+modulate = Color(0, 0, 0, 1)
+offset_left = -211.5
+offset_top = -202.0
+offset_right = 211.5
+offset_bottom = -138.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="hiScore" parent="CanvasLayer" instance=ExtResource("1_ixh0n")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 46.0
+offset_top = 42.0
+offset_right = 469.0
+offset_bottom = 66.0
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Hi-Score: 37"
+
+[node name="mny" parent="CanvasLayer" instance=ExtResource("1_ixh0n")]
+visible = false
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 153.0
+offset_top = 38.0
+offset_right = 270.0
+offset_bottom = 62.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "$ : ??"
+
+[node name="SubmittedScore" parent="CanvasLayer" instance=ExtResource("1_ixh0n")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+offset_left = -469.0
+offset_top = 42.0
+offset_right = -46.0
+offset_bottom = 66.0
+grow_horizontal = 0
+grow_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Submitted-Score: ??"
+
+[node name="submit_button" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -199.0
+offset_right = -29.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_khkh6")
+
+[node name="score" parent="CanvasLayer/submit_button" instance=ExtResource("1_ixh0n")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.563218
+anchor_top = 0.597358
+anchor_right = 0.563218
+anchor_bottom = 0.597358
+offset_left = -69.0
+offset_top = -12.0
+offset_right = 46.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 20
+text = "Submit"
+
+[node name="box" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 315.0
+offset_top = -179.0
+offset_right = 1272.0
+offset_bottom = -17.0
+grow_vertical = 0
+color = Color(0.460995, 0.460995, 0.460995, 1)
+
+[node name="mock" parent="CanvasLayer/box" instance=ExtResource("1_ixh0n")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0435256
+anchor_top = 0.102429
+anchor_right = 0.956474
+anchor_bottom = 0.821572
+offset_left = -6.0
+offset_top = -0.0760002
+offset_right = 5.0
+offset_bottom = 16.972
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 28
+text = "Come on! Click it! that can't hurt! unless you have no guts!
+do you? w..wait.. you have guts, right???"
+autowrap_mode = 3
+justification_flags = 131
+
+[node name="dialog" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -225.0
+offset_right = 479.0
+offset_bottom = 169.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.299547, 0.299547, 0.299547, 1)
+
+[node name="result" parent="CanvasLayer/dialog" instance=ExtResource("1_ixh0n")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0435256
+anchor_top = 0.102429
+anchor_right = 0.956474
+anchor_bottom = 0.821572
+offset_left = -6.0
+offset_top = -0.0760002
+offset_right = 5.0
+offset_bottom = 16.972
+grow_horizontal = 1
+grow_vertical = 1
+theme_override_font_sizes/font_size = 31
+text = "Retries: ??
+Current Score: ??
+Your High Score: ??
+Score to Beat: 37
+
+
+*********************************
+     We didn't store your score 
+*********************************"
+autowrap_mode = 3
+justification_flags = 131
+
+[node name="manong" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -317.0
+offset_right = 317.0
+grow_vertical = 0
+texture = ExtResource("3_avy25")
+
+[node name="Key" parent="." instance=ExtResource("2_rpwsk")]
+nextColor = Color(1, 1, 1, 1)
+
+[connection signal="gui_input" from="CanvasLayer/submit_button" to="." method="_on_submit"]
