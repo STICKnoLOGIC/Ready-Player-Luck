@@ -1,10 +1,10 @@
 # Search for 8th Player
- A entry for game jam of GameDev.tv with a theme ("Last Stand!")[https://itch.io/jam/gamedevtv-jam-2024]
+ A entry for game jam of GameDev.tv with a theme (["Last Stand!"](https://itch.io/jam/gamedevtv-jam-2024))
 
 
-,,,
-(Play the Game!)[https://sticknologic.itch.io/search-for-8th-player]
-,,,
+
+([Play the Game!](https://sticknologic.itch.io/search-for-8th-player))
+
 
 
 ## About
